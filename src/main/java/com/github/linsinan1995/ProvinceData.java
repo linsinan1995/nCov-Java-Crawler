@@ -38,15 +38,15 @@ public class ProvinceData {
         int deadCount;
         int locationId;
 
-        public CityData(String cityName, String confirmedCount, String suspectedCount, String curedCount,
-                        String deadCount, String locationId)
+        public CityData(String cityName, int confirmedCount, int suspectedCount, int curedCount,
+                        int deadCount, int locationId)
         {
             this.cityName = cityName;
-            this.confirmedCount = Integer.parseInt(confirmedCount);
-            this.suspectedCount = Integer.parseInt(suspectedCount);
-            this.curedCount =  Integer.parseInt(curedCount);
-            this.deadCount = Integer.parseInt(deadCount);
-            this.locationId = Integer.parseInt(locationId);
+            this.confirmedCount = confirmedCount;
+            this.suspectedCount = suspectedCount;
+            this.curedCount =  curedCount;
+            this.deadCount = deadCount;
+            this.locationId = locationId;
         }
 
         @Override
@@ -73,7 +73,7 @@ public class ProvinceData {
                 ", curedCount=" + curedCount +
                 ", deadCount=" + deadCount +
                 ", updateTime='" + updateTime + '\'' +
-                ", cities=" + cities +
-                '}';
+                ", cities=[" + cities +
+                "]}" ;
     }
 }

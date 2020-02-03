@@ -4,10 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.github.linsinan1995.Crawler;
 import com.github.linsinan1995.News;
 import com.github.linsinan1995.OverAllData;
+import com.github.linsinan1995.ProvinceData;
 
 import java.io.*;
 import java.util.List;
-import java.util.Map;
 
 public class Tool {
     public static final Tool TOOL = new Tool();
@@ -16,6 +16,12 @@ public class Tool {
     public Tool() {
         crawler = new Crawler();
     }
+
+    static List<ProvinceData> readProvinceData() throws IOException {
+        String ProvinceDataString = TOOL.readJsonFile("data\\ProvinceData.json");
+        return JSON.parseArray(ProvinceDataString, ProvinceData.class);
+    }
+
 
     static List<OverAllData> readOverAllData() throws IOException {
         String OverAllDataString = TOOL.readJsonFile("data\\OverAllData.json");
@@ -54,8 +60,23 @@ public class Tool {
     }
 
     public static void main(String[] args) throws IOException {
-        download();
+        // download();
+
+        List<String> placenameList = readPlaceNames();
+//        placenameList.forEach(System.out::println);
+        System.out.println("placenameList.size() = " + placenameList.size());
+
+        List<ProvinceData> ProvinceDataList = readProvinceData();
+//        ProvinceDataList.forEach(System.out::println);
+        System.out.println("ProvinceDataList.size() = " + ProvinceDataList.size());
+
         List<OverAllData> overAllList = readOverAllData();
-        overAllList.forEach(System.out::println);
+//        overAllList.forEach(System.out::println);
+        System.out.println("overAllList.size() = " + overAllList.size());
+
+        List<News> overNewsList = readNewsData();
+//        overNewsList.forEach(System.out::println);
+        System.out.println("overNewsList.size() = " + overNewsList.size());
+
     }
 }
