@@ -56,7 +56,7 @@ public class OverAllData {
 
     @Override
     public String toString() {
-        return "OverAllData [" +
+        return "OverAllData{" +
                 "countRemark='" + countRemark + '\'' +
                 ", virus='" + virus + '\'' +
                 ", infectSource='" + infectSource + '\'' +
@@ -68,6 +68,6 @@ public class OverAllData {
                 ", deadCount=" + deadCount +
                 ", seriousCount=" + seriousCount +
                 ", updateTime='" + updateTime + '\'' +
-                ']';
+                '}';
     }
 }

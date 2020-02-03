@@ -49,6 +49,31 @@ public class ProvinceData {
             this.locationId = Integer.parseInt(locationId);
         }
 
+        @Override
+        public String toString() {
+            return "CityData{" +
+                    "cityName='" + cityName + '\'' +
+                    ", confirmedCount=" + confirmedCount +
+                    ", suspectedCount=" + suspectedCount +
+                    ", curedCount=" + curedCount +
+                    ", deadCount=" + deadCount +
+                    ", locationId=" + locationId +
+                    '}';
+        }
+    }
 
+    @Override
+    public String toString() {
+        return "ProvinceData{" +
+                "country='" + country + '\'' +
+                ", provinceName='" + provinceName + '\'' +
+                ", provinceShortName='" + provinceShortName + '\'' +
+                ", confirmedCount=" + confirmedCount +
+                ", suspectedCount=" + suspectedCount +
+                ", curedCount=" + curedCount +
+                ", deadCount=" + deadCount +
+                ", updateTime='" + updateTime + '\'' +
+                ", cities=" + cities +
+                '}';
     }
 }

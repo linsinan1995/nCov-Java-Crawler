@@ -19,4 +19,17 @@ public class News {
         this.province = province;
         this.provinceId = provinceId;
     }
+
+    @Override
+    public String toString() {
+        return "News{" +
+                "pubDate='" + pubDate + '\'' +
+                ", title='" + title + '\'' +
+                ", summary='" + summary + '\'' +
+                ", infoSource='" + infoSource + '\'' +
+                ", sourceUrl='" + sourceUrl + '\'' +
+                ", province='" + province + '\'' +
+                ", provinceId=" + provinceId +
+                '}';
+    }
 }
