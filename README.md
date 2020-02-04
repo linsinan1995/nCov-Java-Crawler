@@ -16,7 +16,7 @@ API : https://lab.isaaclin.cn/nCoV/
 
 <br>
 
-<table style="width: 100%" border="1px">
+<table style="width: 100%" >
                 <tbody>
                 <tr>
                     <th colspan="2">类:OverAllData</th>
@@ -77,7 +77,7 @@ API : https://lab.isaaclin.cn/nCoV/
 
 <br>
 
-<table style="width: 100%" border="1px">
+<table style="width: 100%" >
                 <tbody>
                 <tr>
                     <th colspan="2">类:ProvinceData</th>
@@ -135,7 +135,7 @@ API : https://lab.isaaclin.cn/nCoV/
 <br>
 
 
-<table style="width: 100%" border="1px">
+<table style="width: 100%">
                 <tbody>
                 <tr>
                     <th colspan="2">类:News</th>
@@ -177,7 +177,7 @@ API : https://lab.isaaclin.cn/nCoV/
 <br>
 
 <br>
-<table style="width: 100%" border="1px">
+<table style="width: 100%" >
                 <tbody>
                 <tr>
                     <th colspan="2">类:Romour</th>
