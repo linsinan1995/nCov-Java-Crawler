@@ -1,10 +1,8 @@
 package tool;
 
 import com.alibaba.fastjson.JSON;
-import com.github.linsinan1995.Crawler;
-import com.github.linsinan1995.News;
-import com.github.linsinan1995.OverAllData;
-import com.github.linsinan1995.ProvinceData;
+import com.alibaba.fastjson.JSONObject;
+import com.github.linsinan1995.*;
 
 import java.io.*;
 import java.util.List;
@@ -22,7 +20,6 @@ public class Tool {
         return JSON.parseArray(ProvinceDataString, ProvinceData.class);
     }
 
-
     static List<OverAllData> readOverAllData() throws IOException {
         String OverAllDataString = TOOL.readJsonFile("data\\OverAllData.json");
         return JSON.parseArray(OverAllDataString, OverAllData.class);
@@ -33,8 +30,13 @@ public class Tool {
         return JSON.parseArray(NewsDataString, News.class);
     }
 
+    static List<Romour> readRomourData() throws IOException {
+        String RomourDataString = TOOL.readJsonFile("data\\RomourData.json");
+        return JSON.parseArray(RomourDataString, Romour.class);
+    }
+
     static List<String> readPlaceNames() throws IOException {
-        String PlaceNamesString = TOOL.readJsonFile("data\\NewsData.json");
+        String PlaceNamesString = TOOL.readJsonFile("data\\PlaceNames.json");
         return JSON.parseArray(PlaceNamesString, String.class);
     }
 
@@ -51,8 +53,7 @@ public class Tool {
         }
         fileReader.close();
         reader.close();
-        jsonStr = sb.toString();
-        return jsonStr;
+        return sb.toString();
     }
 
     static void download() throws IOException {
@@ -63,20 +64,24 @@ public class Tool {
         // download();
 
         List<String> placenameList = readPlaceNames();
-//        placenameList.forEach(System.out::println);
+        System.out.println(placenameList.get(0));
         System.out.println("placenameList.size() = " + placenameList.size());
 
         List<ProvinceData> ProvinceDataList = readProvinceData();
-//        ProvinceDataList.forEach(System.out::println);
+        System.out.println(ProvinceDataList.get(0));
         System.out.println("ProvinceDataList.size() = " + ProvinceDataList.size());
 
         List<OverAllData> overAllList = readOverAllData();
-//        overAllList.forEach(System.out::println);
+        System.out.println(overAllList.get(0));
         System.out.println("overAllList.size() = " + overAllList.size());
 
         List<News> overNewsList = readNewsData();
-//        overNewsList.forEach(System.out::println);
+        System.out.println(overNewsList.get(0));
         System.out.println("overNewsList.size() = " + overNewsList.size());
 
+        List<Romour> RomourList = readRomourData();
+        System.out.println(RomourList.get(0));
+//        String jsonString = JSON.toJSONString(RomourList.get(0).toString());
+        System.out.println("RomourList.size() = " + RomourList.size());
     }
 }

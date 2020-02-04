@@ -1,5 +1,16 @@
 package com.github.linsinan1995;
 
+/*
+* pubDate 发布时间
+* title 新闻标题
+* summary 摘要
+* infoSource 信息源
+* sourceUrl 新闻源地址
+* provinceId 省份ID
+* province 省份名称
+*
+* */
+
 public class News {
     String pubDate;
     String title;

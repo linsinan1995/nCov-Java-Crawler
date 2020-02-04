@@ -96,6 +96,24 @@ public class Crawler {
         return JSON.parseArray(jsonData.toString(), News.class);
     }
 
+    public List<Romour> getRomour() throws IOException {
+        JSONArray jsonData = getRumourJson(-1, -1);
+        return JSON.parseArray(jsonData.toString(), Romour.class);
+    }
+
+    public List<Romour> getRomour(int rumorType) throws IOException {
+        JSONArray jsonData = getRumourJson(rumorType, -1);
+        return JSON.parseArray(jsonData.toString(), Romour.class);
+    }
+
+    private JSONArray getRumourJson(int rumorType, int num) throws IOException {
+        String url = "https://lab.isaaclin.cn/nCoV/api/rumors?num=" + (num == -1 ? "all":num) +
+                (rumorType == -1 ? "":"&rumorType=" + rumorType);
+        Response respones = getMethod(url);
+        Map maps = (Map)JSON.parse(respones.body().string());
+        return (JSONArray) maps.get("results");
+    }
+
     public static void downloadAll() throws IOException {
         Crawler crawler = new Crawler();
 
@@ -114,6 +132,11 @@ public class Crawler {
         // News
         JSONArray NewsJsonData = crawler.getNewsJson("", -1);
         writeFile("data\\NewsData.json", NewsJsonData.toString());
+
+        // Romours
+        JSONArray RomoursJsonData = crawler.getRumourJson(-1, -1);
+        writeFile("data\\RomourData.json", RomoursJsonData.toString());
+
     }
 
     public static void writeFile(String filePath, String sets)  throws IOException {
@@ -125,5 +148,11 @@ public class Crawler {
         out.close();
     }
 
-
+//    public static void main(String[] args) throws IOException {
+//        Crawler crawler = new Crawler();
+//        List<Romour> romour1 = crawler.getRomour(1);
+//        List<Romour> romour2 = crawler.getRomour(2);
+//        List<Romour> romour3 = crawler.getRomour(0);
+//        System.out.println();
+//    }
 }
