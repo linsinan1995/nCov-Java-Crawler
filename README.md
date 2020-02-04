@@ -16,9 +16,11 @@ API : https://lab.isaaclin.cn/nCoV/
 
 <br>
 
-<table style="width: 40%" border="0px" >
+<table style="width: 100%" border="1px">
                 <tbody>
-                <th colspan="2"> 类:OverAllData <th>
+                <tr>
+                    <th colspan="2">类:OverAllData</th>
+                </tr>
                 <tr>
                     <th width="30%">变量名</th>
                     <th>注释</th>
@@ -75,9 +77,11 @@ API : https://lab.isaaclin.cn/nCoV/
 
 <br>
 
-<table style="width: 40%" >
+<table style="width: 100%" border="1px">
                 <tbody>
-                <th colspan="2"> 类:ProvinceData <th>
+                <tr>
+                    <th colspan="2">类:ProvinceData</th>
+                </tr>
                 <tr>
                     <th width="30%">变量名</th>
                     <th>注释</th>
@@ -131,11 +135,11 @@ API : https://lab.isaaclin.cn/nCoV/
 <br>
 
 
-
-<table style="width: 40%">
+<table style="width: 100%" border="1px">
                 <tbody>
-                <th colspan="2"> 类:News <th>
                 <tr>
+                    <th colspan="2">类:News</th>
+                </tr>
                     <th width="30%">变量名</th>
                     <th>注释</th>
                 </tr>
@@ -173,10 +177,11 @@ API : https://lab.isaaclin.cn/nCoV/
 <br>
 
 <br>
-
-<table style="width: 40%" >
+<table style="width: 100%" border="1px">
                 <tbody>
-                <th colspan="2"> 类:Romour <th>
+                <tr>
+                    <th colspan="2">类:Romour</th>
+                </tr>
                 <tr>
                     <th width="30%">变量名</th>
                     <th>注释</th>

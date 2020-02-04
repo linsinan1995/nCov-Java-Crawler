@@ -61,7 +61,7 @@ public class Tool {
     }
 
     public static void main(String[] args) throws IOException {
-        // download();
+        download();
 
         List<String> placenameList = readPlaceNames();
         System.out.println(placenameList.get(0));
